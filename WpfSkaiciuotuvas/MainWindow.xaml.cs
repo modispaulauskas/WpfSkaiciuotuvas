@@ -26,32 +26,63 @@ namespace WpfSkaiciuotuvas
         }
 
         private void ButtonSudetis(object sender, RoutedEventArgs e)
-        {
-            int x1 = int.Parse(textboxPirmas.Text);
-            int x2 = int.Parse(textboxAntras.Text);
-            labelAts.Content = $"Atsakymas: {x1 + x2}";
-
+        {       
+            if( int.TryParse(textboxPirmas.Text, out int output1) && int.TryParse(textboxAntras.Text, out int output2))
+            {
+                labelAts.Content = $"= {int.Parse(textboxPirmas.Text) + int.Parse(textboxAntras.Text)}";
+            }
+            else
+            {
+                labelAts.Content = $"= Ne skaiciai";
+            }
         }
 
         private void ButtonAtimtis(object sender, RoutedEventArgs e)
         {
-            int x1 = int.Parse(textboxPirmas.Text);
-            int x2 = int.Parse(textboxAntras.Text);
-            labelAts.Content = $"Atsakymas: {x1 - x2}";
+            if (int.TryParse(textboxPirmas.Text, out int output1) && int.TryParse(textboxAntras.Text, out int output2))
+            {
+                labelAts.Content = $"= {int.Parse(textboxPirmas.Text) - int.Parse(textboxAntras.Text)}";
+            }
+            else
+            {
+                labelAts.Content = $"= Ne skaiciai";
+            }
         }
 
         private void ButtonDalyba(object sender, RoutedEventArgs e)
         {
-            int x1 = int.Parse(textboxPirmas.Text);
-            int x2 = int.Parse(textboxAntras.Text);
-            labelAts.Content = $"Atsakymas: {x1 / x2}";
+            if (int.TryParse(textboxPirmas.Text, out int output1) && int.TryParse(textboxAntras.Text, out int output2))
+            {
+                labelAts.Content = $"= {int.Parse(textboxPirmas.Text) / int.Parse(textboxAntras.Text)}";
+            }
+            else
+            {
+                labelAts.Content = $"= Ne skaiciai";
+            }
         }
 
         private void ButtonDaugyba(object sender, RoutedEventArgs e)
         {
-            int x1 = int.Parse(textboxPirmas.Text);
-            int x2 = int.Parse(textboxAntras.Text);
-            labelAts.Content = $"Atsakymas: {x1 * x2}";
+            if (int.TryParse(textboxPirmas.Text, out int output1) && int.TryParse(textboxAntras.Text, out int output2))
+            {
+                labelAts.Content = $"= {int.Parse(textboxPirmas.Text) * int.Parse(textboxAntras.Text)}";
+            }
+            else
+            {
+                labelAts.Content = $"= Ne skaiciai";
+            }
+        }
+
+        private void ButtonTrinti(object sender, RoutedEventArgs e)
+        {
+            labelAts.Content = "= 0";
+            textboxPirmas.Text = "";
+            textboxAntras.Text = "";
+        }
+
+        private void textBoxHistory_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            textBoxHistory.Text += $"{textboxPirmas} {textboxAntras} {labelAts} \n";
         }
     }
 }

@@ -7,12 +7,15 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <TextBox x:Name="textboxPirmas" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="textboxAntras" HorizontalAlignment="Left" Height="23" Margin="148,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button Margin="10,56,662,334" Click="ButtonSudetis" Content="Suma"/>
-        <Label x:Name="labelAts" Content="Label" HorizontalAlignment="Left" Margin="358,56,0,0" VerticalAlignment="Top" FontSize="24"/>
-        <Button Margin="10,90,662,300" Click="ButtonAtimtis" Content="Atimtis"/>
-        <Button Margin="148,56,524,334" Click="ButtonDalyba" Content="Dalyba"/>
-        <Button Margin="148,90,524,300" Click="ButtonDaugyba" Content="Daugyba"/>
+        <TextBox x:Name="textboxPirmas" HorizontalAlignment="Left" Height="47" TextWrapping="Wrap" VerticalAlignment="Top" Width="68" Margin="10,10,0,0" FontSize="24"/>
+        <TextBox x:Name="textboxAntras" HorizontalAlignment="Left" Height="47" TextWrapping="Wrap" VerticalAlignment="Top" Width="67" Margin="103,10,0,0" FontSize="24"/>
+        <Button Height="50" Click="ButtonSudetis" Content="Suma" Margin="103,164,622,205" />
+        <Button Height="50" Click="ButtonAtimtis" Content="Atimtis" Margin="103,85,622,284"/>
+        <Button Height="50" Click="ButtonDalyba" Content="Dalyba" Margin="10,85,714,284"/>
+        <Button Height="50" Click="ButtonDaugyba" Content="Daugyba" Margin="10,164,714,205"/>
+        <Label x:Name="labelAts" Content="Atsakymas:" HorizontalAlignment="Left" Margin="215,21,0,0" VerticalAlignment="Top"/>
+        <Button Height="50" Click="ButtonTrinti" Content="Trinti" Margin="205,85,520,284" />
+        <TextBox x:Name="textBoxHistory" HorizontalAlignment="Left" Height="161" Margin="10,248,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" TextChanged="textBoxHistory_TextChanged"/>
     </Grid>
+
 </Window>
