@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfSkaiciuotuvas.Model;
 
 namespace WpfSkaiciuotuvas
 {
@@ -23,16 +24,18 @@ namespace WpfSkaiciuotuvas
         public MainWindow()
         {
             InitializeComponent();
+            History = new List<CalculatorHistory>();
+            DataGridHistory.ItemsSource = History;
         }
-
-        public static List<string> History = new List<string>();
+        
+        public List<CalculatorHistory> History { get; set; }
 
         private void ButtonSudetis(object sender, RoutedEventArgs e)
         {       
             if( int.TryParse(textboxPirmas.Text, out int output1) && int.TryParse(textboxAntras.Text, out int output2))
             {
                 labelAts.Content = $"= {int.Parse(textboxPirmas.Text) + int.Parse(textboxAntras.Text)}";
-                History.Add($"{textboxPirmas} {textboxAntras} {labelAts}");
+                History.Add(new CalculatorHistory { HistoryLine = $"{textboxPirmas.Text} + {textboxAntras.Text} {labelAts.Content}" });
                 DataGridHistory.ItemsSource = History;
                 DataGridHistory.Items.Refresh();
             }
