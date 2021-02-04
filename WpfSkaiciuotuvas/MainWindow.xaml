@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid.RowDefinitions></Grid.RowDefinitions>
         <TextBox x:Name="textboxPirmas" HorizontalAlignment="Left" Height="47" TextWrapping="Wrap" VerticalAlignment="Top" Width="68" Margin="10,10,0,0" FontSize="24"/>
         <TextBox x:Name="textboxAntras" HorizontalAlignment="Left" Height="47" TextWrapping="Wrap" VerticalAlignment="Top" Width="67" Margin="103,10,0,0" FontSize="24"/>
         <Button Height="50" Click="ButtonSudetis" Content="Suma" Margin="103,164,622,205" />
@@ -15,7 +16,7 @@
         <Button Height="50" Click="ButtonDaugyba" Content="Daugyba" Margin="10,164,714,205"/>
         <Label x:Name="labelAts" Content="Atsakymas:" HorizontalAlignment="Left" Margin="215,21,0,0" VerticalAlignment="Top"/>
         <Button Height="50" Click="ButtonTrinti" Content="Trinti" Margin="205,85,520,284" />
-        <TextBox x:Name="textBoxHistory" HorizontalAlignment="Left" Height="161" Margin="10,248,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" TextChanged="textBoxHistory_TextChanged"/>
+        <DataGrid x:Name="DataGridHistory" HorizontalAlignment="Left" Height="177"  VerticalAlignment="Bottom" Width="192" IsReadOnly="True"/>
     </Grid>
 
 </Window>

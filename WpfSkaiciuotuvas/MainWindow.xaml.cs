@@ -25,11 +25,16 @@ namespace WpfSkaiciuotuvas
             InitializeComponent();
         }
 
+        public static List<string> History = new List<string>();
+
         private void ButtonSudetis(object sender, RoutedEventArgs e)
         {       
             if( int.TryParse(textboxPirmas.Text, out int output1) && int.TryParse(textboxAntras.Text, out int output2))
             {
                 labelAts.Content = $"= {int.Parse(textboxPirmas.Text) + int.Parse(textboxAntras.Text)}";
+                History.Add($"{textboxPirmas} {textboxAntras} {labelAts}");
+                DataGridHistory.ItemsSource = History;
+                DataGridHistory.Items.Refresh();
             }
             else
             {
@@ -42,6 +47,7 @@ namespace WpfSkaiciuotuvas
             if (int.TryParse(textboxPirmas.Text, out int output1) && int.TryParse(textboxAntras.Text, out int output2))
             {
                 labelAts.Content = $"= {int.Parse(textboxPirmas.Text) - int.Parse(textboxAntras.Text)}";
+                //textBoxHistory.Text += $"{textboxPirmas} {textboxAntras} {labelAts} \n";
             }
             else
             {
@@ -54,6 +60,7 @@ namespace WpfSkaiciuotuvas
             if (int.TryParse(textboxPirmas.Text, out int output1) && int.TryParse(textboxAntras.Text, out int output2))
             {
                 labelAts.Content = $"= {int.Parse(textboxPirmas.Text) / int.Parse(textboxAntras.Text)}";
+                //textBoxHistory.Text += $"{textboxPirmas} {textboxAntras} {labelAts} \n";
             }
             else
             {
@@ -66,6 +73,7 @@ namespace WpfSkaiciuotuvas
             if (int.TryParse(textboxPirmas.Text, out int output1) && int.TryParse(textboxAntras.Text, out int output2))
             {
                 labelAts.Content = $"= {int.Parse(textboxPirmas.Text) * int.Parse(textboxAntras.Text)}";
+                //textBoxHistory.Text += $"{textboxPirmas} {textboxAntras} {labelAts} \n";
             }
             else
             {
@@ -78,11 +86,6 @@ namespace WpfSkaiciuotuvas
             labelAts.Content = "= 0";
             textboxPirmas.Text = "";
             textboxAntras.Text = "";
-        }
-
-        private void textBoxHistory_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            textBoxHistory.Text += $"{textboxPirmas} {textboxAntras} {labelAts} \n";
         }
     }
 }
