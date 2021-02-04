@@ -8,15 +8,19 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions></Grid.RowDefinitions>
-        <TextBox x:Name="textboxPirmas" HorizontalAlignment="Left" Height="47" TextWrapping="Wrap" VerticalAlignment="Top" Width="68" Margin="10,10,0,0" FontSize="24"/>
-        <TextBox x:Name="textboxAntras" HorizontalAlignment="Left" Height="47" TextWrapping="Wrap" VerticalAlignment="Top" Width="67" Margin="103,10,0,0" FontSize="24"/>
-        <Button Height="50" Click="ButtonSudetis" Content="Suma" Margin="103,164,622,205" />
-        <Button Height="50" Click="ButtonAtimtis" Content="Atimtis" Margin="103,85,622,284"/>
-        <Button Height="50" Click="ButtonDalyba" Content="Dalyba" Margin="10,85,714,284"/>
-        <Button Height="50" Click="ButtonDaugyba" Content="Daugyba" Margin="10,164,714,205"/>
-        <Label x:Name="labelAts" Content="Atsakymas:" HorizontalAlignment="Left" Margin="215,21,0,0" VerticalAlignment="Top"/>
-        <Button Height="50" Click="ButtonTrinti" Content="Trinti" Margin="205,85,520,284" />
-        <DataGrid x:Name="DataGridHistory" HorizontalAlignment="Left" Height="177"  VerticalAlignment="Bottom" Width="192" IsReadOnly="True"/>
+        <TextBox x:Name="textboxPirmas" HorizontalAlignment="Left" Height="47" TextWrapping="Wrap" VerticalAlignment="Top" Width="68" Margin="10,10,0,0" FontSize="24"></TextBox>
+        <TextBox x:Name="textboxAntras" HorizontalAlignment="Left" Height="47" TextWrapping="Wrap" VerticalAlignment="Top" Width="67" Margin="103,10,0,0" FontSize="24"></TextBox>
+        <Button Height="50" Click="ButtonSudetis" Content="Suma" Margin="103,164,622,205"></Button> 
+        <Button Height="50" Click="ButtonAtimtis" Content="Atimtis" Margin="103,85,622,284"></Button>
+        <Button Height="50" Click="ButtonDalyba" Content="Dalyba" Margin="10,85,714,284"></Button>
+        <Button Height="50" Click="ButtonDaugyba" Content="Daugyba" Margin="10,164,714,205"></Button>
+        <Label x:Name="labelAts" Content="Atsakymas:" HorizontalAlignment="Left" Margin="215,21,0,0" VerticalAlignment="Top"></Label>
+        <Button Height="50" Click="ButtonTrinti" Content="Trinti" Margin="205,85,520,284"></Button> 
+        <DataGrid x:Name="DataGridHistory" HorizontalAlignment="Left" Height="177"  VerticalAlignment="Bottom" Width="192" IsReadOnly="True" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Histor" Binding="{Binding History}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 
 </Window>
